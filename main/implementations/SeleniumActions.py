@@ -1,8 +1,7 @@
 from main.abstracts.IWebActions import IWebActions
-from typing import Tuple
-from selenium.webdriver.remote.webdriver import WebDriver
+from selenium.webdriver.remote.webdriver import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from selemnium.webdriver.support import expected_conditions as EC
 
 class SeleniumActions(IWebActions):
     """
@@ -10,7 +9,7 @@ class SeleniumActions(IWebActions):
     Element interactions occur in this class
     """
 
-    def __init__(self, driver: WebDriver):
+    def __init__(self, driver: webdriver):
         self.driver = driver
         self.default_timeout = 10
         self.wait = WebDriverWait(self.driver, self.default_timeout)

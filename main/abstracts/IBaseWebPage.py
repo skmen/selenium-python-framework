@@ -1,13 +1,18 @@
+#abstracts/BasePage.py
+
 from abc import ABC, abstractmethod
-from main.abstracts.IWebActions import IWebActions
 
 class IBaseWebPage(ABC):
     """
-    Base interface for all web pages
+    Interface/base page for all pages of the automation demo site
     """
 
-    @property
     @abstractmethod
-    def actions(self) -> IWebActions:
-        """Returns the web actions implementation"""
+    def load(self, url: str) -> None:
+        """Navigates the browser to the specificed URL"""
+        pass
+
+    @abstractmethod
+    def get_page_title(self) -> str:
+        """Returns the page title"""
         pass
